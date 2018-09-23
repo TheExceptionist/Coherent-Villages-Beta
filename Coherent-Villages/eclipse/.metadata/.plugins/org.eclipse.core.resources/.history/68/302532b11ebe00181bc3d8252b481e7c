@@ -1,0 +1,80 @@
+package net.theexceptionist.coherentvillages.entity.ai;
+
+import java.util.List;
+
+import net.minecraft.entity.ai.EntityAITarget;
+import net.minecraft.init.Blocks;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.village.Village;
+import net.minecraft.village.VillageDoorInfo;
+import net.minecraft.world.World;
+import net.theexceptionist.coherentvillages.entity.soldier.AbstractVillagerSoldier;
+
+public class EntityAIGuardPost extends EntityAITarget {
+	private AbstractVillagerSoldier soldier;
+	private World worldin;
+	private BlockPos post;
+
+    public EntityAIGuardPost(AbstractVillagerSoldier soldier, World worldin)
+    {
+        super(soldier, false, true);
+        this.soldier = soldier;
+        this.worldin = worldin;
+        this.post = null;
+        this.setMutexBits(1);
+    }
+
+    
+    public boolean shouldExecute()
+    {
+        Village village = this.soldier.getVillage();
+//
+        if(village == null || this.soldier.getAttackTarget() != null || this.soldier.getAttackingEntity() != null)
+        {
+        	return false;
+        }
+        else
+        {
+        	return true;
+        }
+    }
+
+    /**
+     * Execute a one shot task or start executing a continuous task
+     */
+    public void startExecuting()
+    {
+    	Village village = this.soldier.getVillage();
+    	List<VillageDoorInfo> doorInfo = village.getVillageDoorInfoList();
+    	VillageDoorInfo door = doorInfo.get(this.worldin.rand.nextInt(doorInfo.size()));
+    	BlockPos doorPos = door.getDoorBlockPos();
+    	BlockPos possiblePost1 = new BlockPos(doorPos.getX() - 1, doorPos.getY() - 1, doorPos.getZ() - 1);
+    	BlockPos possiblePost2 = new BlockPos(doorPos.getX() - 1, doorPos.getY() - 1, doorPos.getZ() + 1);
+    	
+    	if(worldin.getBlockState(possiblePost1).getBlock() == Blocks.AIR)
+    	{
+    		post = possiblePost1;
+    	}
+    	else if(worldin.getBlockState(possiblePost1).getBlock() == Blocks.AIR)
+    	{
+    		post = possiblePost2;
+    	}
+    	
+    	
+    }
+             
+    public boolean continueExecuting()
+    {
+    	Village village = this.soldier.getVillage();
+    	//
+    	if(village == null || this.soldier.getAttackTarget() != null || this.soldier.getAttackingEntity() != null)
+    	{
+    	   return false;
+    	}
+    	else
+    	{
+    	   return true;
+        }
+    }
+
+}

@@ -1,0 +1,112 @@
+---- Minecraft Crash Report ----
+// Shall we play a game?
+
+Time: 9/21/18 11:59 PM
+Description: Ticking entity
+
+java.lang.NullPointerException: Ticking entity
+	at net.theexceptionist.coherentvillages.entity.ai.EntityAIGuardPost.travelToPost(EntityAIGuardPost.java:63)
+	at net.theexceptionist.coherentvillages.entity.ai.EntityAIGuardPost.shouldContinueExecuting(EntityAIGuardPost.java:108)
+	at net.minecraft.entity.ai.EntityAITasks.canContinue(EntityAITasks.java:126)
+	at net.minecraft.entity.ai.EntityAITasks.onUpdateTasks(EntityAITasks.java:97)
+	at net.minecraft.entity.EntityLiving.updateEntityActionState(EntityLiving.java:843)
+	at net.minecraft.entity.EntityLivingBase.onLivingUpdate(EntityLivingBase.java:2582)
+	at net.minecraft.entity.EntityLiving.onLivingUpdate(EntityLiving.java:647)
+	at net.minecraft.entity.EntityAgeable.onLivingUpdate(EntityAgeable.java:212)
+	at net.theexceptionist.coherentvillages.entity.soldier.AbstractVillagerSoldier.onLivingUpdate(AbstractVillagerSoldier.java:149)
+	at net.minecraft.entity.EntityLivingBase.onUpdate(EntityLivingBase.java:2398)
+	at net.minecraft.entity.EntityLiving.onUpdate(EntityLiving.java:346)
+	at net.minecraft.world.World.updateEntityWithOptionalForce(World.java:2168)
+	at net.minecraft.world.WorldServer.updateEntityWithOptionalForce(WorldServer.java:871)
+	at net.minecraft.world.World.updateEntity(World.java:2127)
+	at net.minecraft.world.World.updateEntities(World.java:1928)
+	at net.minecraft.world.WorldServer.updateEntities(WorldServer.java:643)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:842)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:743)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:192)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:592)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at net.theexceptionist.coherentvillages.entity.ai.EntityAIGuardPost.travelToPost(EntityAIGuardPost.java:63)
+	at net.theexceptionist.coherentvillages.entity.ai.EntityAIGuardPost.shouldContinueExecuting(EntityAIGuardPost.java:108)
+	at net.minecraft.entity.ai.EntityAITasks.canContinue(EntityAITasks.java:126)
+	at net.minecraft.entity.ai.EntityAITasks.onUpdateTasks(EntityAITasks.java:97)
+	at net.minecraft.entity.EntityLiving.updateEntityActionState(EntityLiving.java:843)
+	at net.minecraft.entity.EntityLivingBase.onLivingUpdate(EntityLivingBase.java:2582)
+	at net.minecraft.entity.EntityLiving.onLivingUpdate(EntityLiving.java:647)
+	at net.minecraft.entity.EntityAgeable.onLivingUpdate(EntityAgeable.java:212)
+	at net.theexceptionist.coherentvillages.entity.soldier.AbstractVillagerSoldier.onLivingUpdate(AbstractVillagerSoldier.java:149)
+	at net.minecraft.entity.EntityLivingBase.onUpdate(EntityLivingBase.java:2398)
+	at net.minecraft.entity.EntityLiving.onUpdate(EntityLiving.java:346)
+	at net.minecraft.world.World.updateEntityWithOptionalForce(World.java:2168)
+	at net.minecraft.world.WorldServer.updateEntityWithOptionalForce(WorldServer.java:871)
+	at net.minecraft.world.World.updateEntity(World.java:2127)
+
+-- Entity being ticked --
+Details:
+	Entity Type: coherentvillages:villager_guard (net.theexceptionist.coherentvillages.entity.soldier.EntityVillagerGuard)
+	Entity ID: 5340
+	Entity Name: Villager Guard
+	Entity's Exact location: 124.50, 73.00, 178.50
+	Entity's Block location: World: (124,73,178), Chunk: (at 12,4,2 in 7,11; contains blocks 112,0,176 to 127,255,191), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Entity's Momentum: 0.00, -0.08, 0.00
+	Entity's Passengers: []
+	Entity's Vehicle: ~~ERROR~~ NullPointerException: null
+Stacktrace:
+	at net.minecraft.world.World.updateEntities(World.java:1928)
+	at net.minecraft.world.WorldServer.updateEntities(WorldServer.java:643)
+
+-- Affected level --
+Details:
+	Level name: New World
+	All players: 1 total; [EntityPlayerMP['Player83'/2416, l='New World', x=125.30, y=72.70, z=176.79]]
+	Chunk stats: ServerChunkCache: 740 Drop: 0
+	Level seed: 1493053199483600750
+	Level generator: ID 00 - default, ver 1. Features enabled: true
+	Level generator options: 
+	Level spawn location: World: (131,64,157), Chunk: (at 3,4,13 in 8,9; contains blocks 128,0,144 to 143,255,159), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 123 game time, 123 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 179375 (now: false), thunder time: 163798 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:842)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:743)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:192)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:592)
+	at java.lang.Thread.run(Thread.java:748)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Mac OS X (x86_64) version 10.13.6
+	Java Version: 1.8.0_144, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 250715592 bytes (239 MB) / 894959616 bytes (853 MB) up to 1908932608 bytes (1820 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 13, tallocated: 95
+	FML: MCP 9.42 Powered by Forge 14.23.4.2757 5 mods loaded, 5 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State     | ID               | Version      | Source                           | Signature |
+	|:--------- |:---------------- |:------------ |:-------------------------------- |:--------- |
+	| UCHIJAAAA | minecraft        | 1.12.2       | minecraft.jar                    | None      |
+	| UCHIJAAAA | mcp              | 9.42         | minecraft.jar                    | None      |
+	| UCHIJAAAA | FML              | 8.0.99.99    | forgeSrc-1.12.2-14.23.4.2757.jar | None      |
+	| UCHIJAAAA | forge            | 14.23.4.2757 | forgeSrc-1.12.2-14.23.4.2757.jar | None      |
+	| UCHIJAAAA | coherentvillages | 1.6.4.0      | modid-1.0.jar                    | None      |
+
+	Loaded coremods (and transformers): 
+	GL info: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	Profiler Position: N/A (disabled)
+	Player Count: 1 / 8; [EntityPlayerMP['Player83'/2416, l='New World', x=125.30, y=72.70, z=176.79]]
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'

@@ -1,0 +1,126 @@
+package net.theexceptionist.coherentvillages.entity.ai;
+
+import java.util.List;
+
+import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.EntityAITarget;
+import net.minecraft.init.Blocks;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.village.Village;
+import net.minecraft.village.VillageDoorInfo;
+import net.minecraft.world.World;
+import net.theexceptionist.coherentvillages.entity.soldier.AbstractVillagerSoldier;
+import net.theexceptionist.coherentvillages.main.Main;
+
+public class EntityAIGuardPost extends EntityAITarget {
+	private AbstractVillagerSoldier soldier;
+	private World worldin;
+	private BlockPos post;
+	private boolean travelSucceed, arrived;
+
+    public EntityAIGuardPost(AbstractVillagerSoldier soldier, World worldin)
+    {
+        super(soldier, false, true);
+        this.soldier = soldier;
+        this.worldin = worldin;
+        this.post = null;
+        this.arrived = false;
+        this.setMutexBits(1);
+    }
+
+    
+    public boolean shouldExecute()
+    {
+        Village village = this.soldier.getVillage();
+        
+        if(village == null || this.soldier.getAttackTarget() != null || this.soldier.getAttackingEntity() != null)
+        {
+        	return false;
+        }
+        else
+        {
+        	System.out.println("Starting guard post");
+        	return true;
+        }
+    }
+
+    /**
+     * Execute a one shot task or start executing a continuous task
+     */
+    public void startExecuting()
+    {
+    	this.post = getPost();
+    	
+    	if(post != null)
+    	{
+    		travelToPost();
+        	System.out.println("Post- X: "+post.getX()+" Y: "+post.getY()+" Z: "+post.getZ());
+    	} 
+    }
+             
+    private void travelToPost() {
+    	if(post != null){
+			float speed = (float)this.soldier.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).getAttributeValue();
+			travelSucceed = this.soldier.getNavigator().tryMoveToXYZ(post.getX(), post.getY(), post.getZ(), speed);
+    	}
+	}
+
+
+	private BlockPos getPost() {
+    	Village village = this.soldier.getVillage();
+    	List<VillageDoorInfo> doorInfo = village.getVillageDoorInfoList();
+    	VillageDoorInfo door = doorInfo.get(this.worldin.rand.nextInt(doorInfo.size()));
+    	BlockPos doorPos = door.getDoorBlockPos();
+    	BlockPos possiblePosts[] = 
+    		{
+    			new BlockPos(doorPos.getX() - 1, doorPos.getY() - 1, doorPos.getZ() - 1),
+    			new BlockPos(doorPos.getX() - 1, doorPos.getY() - 1, doorPos.getZ() + 1),
+    			new BlockPos(doorPos.getX() + 1, doorPos.getY() - 1, doorPos.getZ() - 1),
+    			new BlockPos(doorPos.getX() + 1, doorPos.getY() - 1, doorPos.getZ() + 1)
+    	};
+    	BlockPos returnPost = null;
+    	
+    	for(int i = 0; i < possiblePosts.length; i++)
+    	{
+    		if(worldin.getBlockState(possiblePosts[i]).getBlock() == Blocks.AIR)
+        	{
+        		returnPost = possiblePosts[i];
+        	}
+    		
+    		break;
+    	}
+    	
+    	return returnPost;
+	}
+
+
+	public boolean shouldContinueExecuting()
+    {
+    	Village village = this.soldier.getVillage();
+    	//
+    	if(village == null || this.soldier.getAttackTarget() != null || this.soldier.getAttackingEntity() != null)
+    	{
+    		System.out.println("Stopping execute..."+village+" | attacking: "+this.soldier.getAttackTarget()+" | attacker: "+this.soldier.getAttackingEntity());
+    	   return false;
+    	}
+        else if(this.post == null)
+        {
+        	System.out.println("Getting Post");
+        	this.post = getPost();
+        	travelToPost();
+        	return true;
+        }
+    	else
+    	{
+    		System.out.println("Continue execute... X: "+post.getX()+" Y: "+post.getY()+" Z: "+post.getZ()+" Travel: "+travelSucceed);
+    		
+    		if(this.soldier.getPos() == this.post)
+    		{
+    			arrived = true;
+    		}
+    		
+    	   return true;
+        }
+    }
+
+}

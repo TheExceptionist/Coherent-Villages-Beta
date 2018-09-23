@@ -1,0 +1,12 @@
+package net.theexceptionist.coherentvillages.entity.soldier;
+
+import net.minecraft.world.World;
+
+public class EntityVillagerManAtArms extends AbstractVillagerSoldier{
+
+	public EntityVillagerManAtArms(World world) {
+		// TODO Auto-generated constructor stub
+		super(world);
+	}
+
+}

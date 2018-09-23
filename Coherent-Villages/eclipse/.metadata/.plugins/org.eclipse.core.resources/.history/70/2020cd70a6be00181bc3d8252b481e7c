@@ -1,0 +1,122 @@
+package net.theexceptionist.coherentvillages.worldgen;
+
+import java.util.List;
+import java.util.Random;
+
+import net.minecraft.block.BlockStairs;
+import net.minecraft.block.BlockStone;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.IEntityLivingData;
+import net.minecraft.init.Blocks;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraft.world.gen.structure.StructureBoundingBox;
+import net.minecraft.world.gen.structure.StructureComponent;
+import net.minecraft.world.gen.structure.StructureVillagePieces;
+import net.theexceptionist.coherentvillages.entity.EntityVillagerArcher;
+import net.theexceptionist.coherentvillages.entity.EntityVillagerMage;
+
+public class VillageComponentWizardTower extends StructureVillagePieces.Village
+    {
+    private boolean isRoofAccessible;
+	private int villagersSpawned;
+
+    public VillageComponentWizardTower()
+    {
+    }
+
+    public VillageComponentWizardTower(StructureVillagePieces.Start start, int p_i45566_2_, Random rand, StructureBoundingBox p_i45566_4_, EnumFacing facing)
+    {
+        super(start, p_i45566_2_);
+        this.setCoordBaseMode(facing);
+        this.boundingBox = p_i45566_4_;
+        this.isRoofAccessible = rand.nextBoolean();
+    }
+
+    public static VillageComponentGuardTower createPiece(StructureVillagePieces.Start start, List<StructureComponent> p_175858_1_, Random rand, int p_175858_3_, int p_175858_4_, int p_175858_5_, EnumFacing facing, int p_175858_7_)
+    {
+        StructureBoundingBox structureboundingbox = StructureBoundingBox.getComponentToAddBoundingBox(p_175858_3_, p_175858_4_, p_175858_5_, 0, 0, 0, 7, 7, 7, facing);
+        return StructureComponent.findIntersecting(p_175858_1_, structureboundingbox) != null ? null : new VillageComponentGuardTower(start, p_175858_7_, rand, structureboundingbox, facing);
+    }
+
+    /**
+     * second Part of Structure generating, this for example places Spiderwebs, Mob Spawners, it closes
+     * Mineshafts at the end, it adds Fences...
+     */
+    public boolean addComponentParts(World worldIn, Random randomIn, StructureBoundingBox structureBoundingBoxIn)
+    {
+    	//System.out.println("Generating"+this.getXWithOffset(0, 0)+" "+this.getZWithOffset(0, 0));
+        if (this.averageGroundLvl < 0)
+        {
+            this.averageGroundLvl = this.getAverageGroundLevel(worldIn, structureBoundingBoxIn);
+
+            if (this.averageGroundLvl < 0)
+            {
+                return true;
+            }
+
+            this.boundingBox.offset(0, this.averageGroundLvl - this.boundingBox.maxY + 5, 0);
+        }
+        
+        int type = randomIn.nextInt(2);
+        
+        this.fillWithBlocks(worldIn, structureBoundingBoxIn, 0, 0, 0, 6, 7, 6, Blocks.AIR.getDefaultState(), Blocks.AIR.getDefaultState(), false);
+        
+        for (int j = 0; j < 8; ++j)
+        {
+            for (int i = 0; i < 8; ++i)
+            {
+                this.clearCurrentPositionBlocksUpwards(worldIn, i, -2, j, structureBoundingBoxIn);
+                this.replaceAirAndLiquidDownwards(worldIn, Blocks.PLANKS.getDefaultState(), i, -1, j, structureBoundingBoxIn);
+            }
+        }
+        
+        if(!worldIn.isRemote){
+        	this.spawnVillagers(worldIn, structureBoundingBoxIn, 1, 10, 2, 2 + randomIn.nextInt(4));
+        }
+        return true;
+    }
+    
+    protected void spawnVillagers(World worldIn, StructureBoundingBox structurebb, int x, int y, int z, int count)
+    {
+        if (this.villagersSpawned < count)
+        {
+            for (int i = villagersSpawned; i < count; ++i)
+            {
+                int j = this.getXWithOffset(x + i, z);
+                int k = this.getYWithOffset(y);
+                int l = this.getZWithOffset(x + i, z);
+
+                if (!structurebb.isVecInside(new BlockPos(j, k, l)))
+                {
+                    break;
+                }
+
+                ++this.villagersSpawned;
+
+                if(worldIn.rand.nextInt(100) <= 95){
+                	EntityVillagerArcher entityvillager = new EntityVillagerArcher(worldIn);
+                	entityvillager.setLocationAndAngles((double)j + 0.5D, (double)k - 8D, (double)l + 0.5D, 0.0F, 0.0F);
+                    entityvillager.setSpawnPoint((double)j + 0.5D, (double)k - 8, (double)l + 0.5D);
+                    //entityvillager.setProfession(null);
+                    
+                    entityvillager.finalizeMobSpawn(worldIn.getDifficultyForLocation(new BlockPos(entityvillager)), (IEntityLivingData)null, false);
+                    worldIn.spawnEntity(entityvillager);
+                }
+                
+                if(worldIn.rand.nextInt(100) <= 5){
+                	EntityVillagerMage entityvillager = new EntityVillagerMage(worldIn);
+                	entityvillager.setLocationAndAngles((double)j + 0.5D, (double)k - 8D, (double)l + 0.5D, 0.0F, 0.0F);
+                    entityvillager.setSpawnPoint((double)j + 0.5D, (double)k - 8, (double)l + 0.5D);
+                    //entityvillager.setProfession(null);
+                    
+                    entityvillager.finalizeMobSpawn(worldIn.getDifficultyForLocation(new BlockPos(entityvillager)), (IEntityLivingData)null, false);
+                    worldIn.spawnEntity(entityvillager);
+                }
+                
+            }
+        }
+    }
+}

@@ -1,0 +1,160 @@
+[20:44:49] [main/INFO] [GradleStart]: Extra: []
+[20:44:49] [main/INFO] [GradleStart]: Running with arguments: [--tweakClass, net.minecraftforge.fml.common.launcher.FMLServerTweaker, --tweakClass, net.minecraftforge.gradle.tweakers.CoremodTweaker]
+[20:44:50] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLServerTweaker
+[20:44:50] [main/INFO] [LaunchWrapper]: Using primary tweak class name net.minecraftforge.fml.common.launcher.FMLServerTweaker
+[20:44:50] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.CoremodTweaker
+[20:44:50] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLServerTweaker
+[20:44:50] [main/INFO] [FML]: Forge Mod Loader version 14.23.4.2757 for Minecraft 1.12.2 loading
+[20:44:50] [main/INFO] [FML]: Java is Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_144, running on Mac OS X:x86_64:10.13.6, installed at /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre
+[20:44:50] [main/ERROR] [FML]: Apache Maven library folder was not in the format expected. Using default libraries directory.
+[20:44:50] [main/ERROR] [FML]: Full: /Users/kennethstepney/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-artifact/3.5.3/7dc72b6d6d8a6dced3d294ed54c2cc3515ade9f4/maven-artifact-3.5.3.jar
+[20:44:50] [main/ERROR] [FML]: Trimmed: /users/kennethstepney/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-artifact/3.5.3/
+[20:44:50] [main/INFO] [FML]: Managed to load a deobfuscated Minecraft name- we are in a deobfuscated environment. Skipping runtime deobfuscation
+[20:44:50] [main/INFO] [FML]: Ignoring missing certificate for coremod FMLCorePlugin (net.minecraftforge.fml.relauncher.FMLCorePlugin), we are in deobf and it's a forge core plugin
+[20:44:50] [main/INFO] [FML]: Ignoring missing certificate for coremod FMLForgePlugin (net.minecraftforge.classloading.FMLForgePlugin), we are in deobf and it's a forge core plugin
+[20:44:50] [main/INFO] [FML]: Searching /Users/kennethstepney/Documents/GitHub/Coherent-Villages/run/./mods for mods
+[20:44:50] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.CoremodTweaker
+[20:44:50] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.fml.relauncher.FMLCorePlugin
+[20:44:50] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.classloading.FMLForgePlugin
+[20:44:50] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[20:44:50] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
+[20:44:50] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
+[20:44:50] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[20:44:50] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[20:44:50] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[20:44:51] [main/ERROR] [FML]: FML appears to be missing any signature data. This is not a good thing
+[20:44:51] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[20:44:51] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
+[20:44:51] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
+[20:44:51] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.TerminalTweaker
+[20:44:51] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.TerminalTweaker
+[20:44:52] [main/INFO] [LaunchWrapper]: Launching wrapped minecraft {net.minecraft.server.MinecraftServer}
+[20:45:00] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Starting minecraft server version 1.12.2
+[20:45:00] [Server thread/INFO] [FML]: MinecraftForge v14.23.4.2757 Initialized
+[20:45:00] [Server thread/INFO] [FML]: Starts to replace vanilla recipe ingredients with ore ingredients.
+[20:45:00] [Server thread/INFO] [FML]: Replaced 1036 ore ingredients
+[20:45:00] [Server thread/INFO] [FML]: Searching /Users/kennethstepney/Documents/GitHub/Coherent-Villages/run/./mods for mods
+[20:45:02] [Server thread/INFO] [FML]: Forge Mod Loader has identified 5 mods to load
+[20:45:02] [Server thread/WARN] [FML]: Missing English translation for FML: assets/fml/lang/en_us.lang
+[20:45:02] [Server thread/INFO] [FML]: Attempting connection with missing mods [minecraft, mcp, FML, forge, coherentvillages] at CLIENT
+[20:45:02] [Server thread/INFO] [FML]: Attempting connection with missing mods [minecraft, mcp, FML, forge, coherentvillages] at SERVER
+[20:45:03] [Server thread/INFO] [FML]: Processing ObjectHolder annotations
+[20:45:04] [Server thread/INFO] [FML]: Found 1168 ObjectHolder annotations
+[20:45:04] [Server thread/INFO] [FML]: Identifying ItemStackHolder annotations
+[20:45:04] [Server thread/INFO] [FML]: Found 0 ItemStackHolder annotations
+[20:45:04] [Server thread/INFO] [FML]: Configured a dormant chunk cache size of 0
+[20:45:04] [Forge Version Check/INFO] [forge.VersionCheck]: [forge] Starting version check at http://files.minecraftforge.net/maven/net/minecraftforge/forge/promotions_slim.json
+[20:45:04] [Server thread/INFO] [STDOUT]: [net.theexceptionist.coherentvillages.main.Main:preInit:192]: Coherent Villages Beta is loading!
+[20:45:04] [Server thread/INFO] [STDOUT]: [net.theexceptionist.coherentvillages.main.Main:preInit:193]: &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+[20:45:04] [Server thread/INFO] [STDOUT]: [net.theexceptionist.coherentvillages.main.Main:preInit:194]: Working Directory = /Users/kennethstepney/Documents/GitHub/Coherent-Villages/run
+[20:45:04] [Server thread/INFO] [STDOUT]: [net.theexceptionist.coherentvillages.main.Main:preInit:196]: coherentvillages| Checking for config file
+/Users/kennethstepney/Documents/GitHub/Coherent-Villages/run/config
+[20:45:04] [Server thread/INFO] [STDOUT]: [net.theexceptionist.coherentvillages.main.Main:readConfig:238]: coherentvillages| Config file found! 
+Loading...
+[20:45:04] [Server thread/INFO] [STDOUT]: [net.theexceptionist.coherentvillages.main.Main:readConfig:276]: Read the config file! New Max: 9 New Min: 3 New Merchant: 1
+[20:45:04] [Server thread/INFO] [STDOUT]: [net.theexceptionist.coherentvillages.main.Main:preInit:233]: &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+[20:45:04] [Server thread/INFO] [FML]: Applying holder lookups
+[20:45:04] [Server thread/INFO] [FML]: Holder lookups applied
+[20:45:04] [Server thread/INFO] [FML]: Applying holder lookups
+[20:45:04] [Server thread/INFO] [FML]: Holder lookups applied
+[20:45:04] [Server thread/INFO] [FML]: Applying holder lookups
+[20:45:04] [Server thread/INFO] [FML]: Holder lookups applied
+[20:45:04] [Server thread/INFO] [FML]: Applying holder lookups
+[20:45:04] [Server thread/INFO] [FML]: Holder lookups applied
+[20:45:04] [Server thread/INFO] [FML]: Injecting itemstacks
+[20:45:04] [Server thread/INFO] [FML]: Itemstack injection complete
+[20:45:04] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Loading properties
+[20:45:04] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Default game type: SURVIVAL
+[20:45:04] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Generating keypair
+[20:45:04] [Forge Version Check/INFO] [forge.VersionCheck]: [forge] Found status: OUTDATED Target: 14.23.4.2759
+[20:45:04] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Starting Minecraft server on *:25565
+[20:45:04] [Server thread/INFO] [net.minecraft.network.NetworkSystem]: Using default channel type
+[20:45:05] [Server thread/INFO] [FML]: Applying holder lookups
+[20:45:05] [Server thread/INFO] [FML]: Holder lookups applied
+[20:45:05] [Server thread/INFO] [FML]: Injecting itemstacks
+[20:45:05] [Server thread/INFO] [FML]: Itemstack injection complete
+[20:45:06] [Server thread/INFO] [FML]: Forge Mod Loader has successfully loaded 5 mods
+[20:45:06] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Preparing level "world"
+[20:45:06] [Server thread/INFO] [FML.ModTracker]: This world was saved with mod coherentvillages version 1.5.0.0 and it is now at version v1.0.0.0, things may not work well
+[20:45:06] [Server thread/INFO] [FML]: Injecting existing registry data into this server instance
+[20:45:06] [Server thread/INFO] [FML]: Registry EntityEntry: Found a missing id from the world coherentvillages:villager_soldier
+[20:45:06] [Server thread/ERROR] [FML]: Unidentified mapping from registry minecraft:entities
+[20:45:06] [Server thread/ERROR] [FML]:     coherentvillages:villager_soldier: 0
+[20:45:06] [Server thread/WARN] [FML]: Forge Mod Loader detected missing registry entries.
+
+There are 1 missing entries in this save.
+If you continue the missing entries will get removed.
+A world backup will be automatically created in your saves directory.
+
+Missing minecraft:entities:
+    coherentvillages:villager_soldier
+
+
+Run the command /fml confirm or or /fml cancel to proceed.
+Alternatively start the server with -Dfml.queryResult=confirm or -Dfml.queryResult=cancel to preselect the answer.
+[20:45:23] [Server thread/INFO] [FML]: confirmed
+[20:45:24] [Server thread/INFO] [FML]: World backup created at /Users/kennethstepney/Documents/GitHub/Coherent-Villages/run/world-20180922-204523.zip.
+[20:45:24] [Server thread/ERROR] [FML]: There are unidentified mappings in this world - we are going to attempt to process anyway
+[20:45:24] [Server thread/WARN] [FML]: Registry EntityEntry: Object did not get ID it asked for. Name: coherentvillages:villager_man_at_arms Expected: 38 Got: 76
+[20:45:24] [Server thread/WARN] [FML]: Registry EntityEntry: Object did not get ID it asked for. Name: coherentvillages:villager_merchant_guard Expected: 76 Got: 77
+[20:45:24] [Server thread/WARN] [FML]: Registry EntityEntry: Object did not get ID it asked for. Name: coherentvillages:villager_sergeant Expected: 39 Got: 78
+[20:45:24] [Server thread/WARN] [FML]: Registry EntityEntry: Object did not get ID it asked for. Name: coherentvillages:villager_militia Expected: 70 Got: 79
+[20:45:24] [Server thread/WARN] [FML]: Registry EntityEntry: Object did not get ID it asked for. Name: coherentvillages:villager_warrior Expected: 48 Got: 82
+[20:45:24] [Server thread/WARN] [FML]: Registry EntityEntry: Object did not get ID it asked for. Name: coherentvillages:villager_peasant Expected: 49 Got: 83
+[20:45:24] [Server thread/INFO] [FML]: Applying holder lookups
+[20:45:24] [Server thread/INFO] [FML]: Holder lookups applied
+[20:45:24] [Server thread/INFO] [FML]: Loading dimension 0 (world) (net.minecraft.server.dedicated.DedicatedServer@4f6d02a9)
+[20:45:25] [Server thread/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 488 advancements
+[20:45:25] [Server thread/INFO] [FML]: Loading dimension -1 (world) (net.minecraft.server.dedicated.DedicatedServer@4f6d02a9)
+[20:45:25] [Server thread/INFO] [FML]: Loading dimension 1 (world) (net.minecraft.server.dedicated.DedicatedServer@4f6d02a9)
+[20:45:25] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing start region for level 0
+[20:45:26] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 5%
+[20:45:26] [Server thread/WARN] [net.minecraft.entity.EntityList]: Skipping Entity with id coherentvillages:villager_soldier
+[20:45:26] [Server thread/WARN] [net.minecraft.entity.EntityList]: Skipping Entity with id coherentvillages:villager_soldier
+[20:45:26] [Server thread/WARN] [net.minecraft.entity.EntityList]: Skipping Entity with id coherentvillages:villager_soldier
+[20:45:26] [Server thread/WARN] [net.minecraft.entity.EntityList]: Skipping Entity with id coherentvillages:villager_soldier
+[20:45:26] [Server thread/WARN] [net.minecraft.entity.EntityList]: Skipping Entity with id coherentvillages:villager_soldier
+[20:45:26] [Server thread/WARN] [net.minecraft.entity.EntityList]: Skipping Entity with id coherentvillages:villager_soldier
+[20:45:26] [Server thread/WARN] [net.minecraft.entity.EntityList]: Skipping Entity with id coherentvillages:villager_soldier
+[20:45:27] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 82%
+[20:45:27] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Done (21.641s)! For help, type "help" or "?"
+[20:45:28] [Server thread/INFO] [FML]: Unloading dimension -1
+[20:45:28] [Server thread/INFO] [FML]: Unloading dimension 1
+[20:46:16] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Unknown command. Try /help for a list of commands
+[20:46:19] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Unknown command. Try /help for a list of commands
+[20:46:21] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: --- Showing help page 1 of 10 (/help <page>) ---
+[20:46:21] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: /advancement <grant|revoke|test> <player>
+[20:46:21] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: /ban <name> [reason ...]
+[20:46:21] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: /ban-ip <address|name> [reason ...]
+[20:46:21] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: /banlist [ips|players]
+[20:46:21] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: /blockdata <x> <y> <z> <dataTag>
+[20:46:21] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: /clear [player] [item] [data] [maxCount] [dataTag]
+[20:46:21] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: /clone <x1> <y1> <z1> <x2> <y2> <z2> <x> <y> <z> [maskMode] [cloneMode]
+[20:46:21] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Tip: Use the <tab> key while typing a command to auto-complete the command or its arguments
+[20:46:26] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: --- Showing help page 1 of 10 (/help <page>) ---
+[20:46:26] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: /advancement <grant|revoke|test> <player>
+[20:46:26] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: /ban <name> [reason ...]
+[20:46:26] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: /ban-ip <address|name> [reason ...]
+[20:46:26] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: /banlist [ips|players]
+[20:46:26] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: /blockdata <x> <y> <z> <dataTag>
+[20:46:26] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: /clear [player] [item] [data] [maxCount] [dataTag]
+[20:46:26] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: /clone <x1> <y1> <z1> <x2> <y2> <z2> <x> <y> <z> [maskMode] [cloneMode]
+[20:46:26] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Tip: Use the <tab> key while typing a command to auto-complete the command or its arguments
+[20:46:33] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: --- Showing help page 1 of 10 (/help <page>) ---
+[20:46:33] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: /advancement <grant|revoke|test> <player>
+[20:46:33] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: /ban <name> [reason ...]
+[20:46:33] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: /ban-ip <address|name> [reason ...]
+[20:46:33] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: /banlist [ips|players]
+[20:46:33] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: /blockdata <x> <y> <z> <dataTag>
+[20:46:33] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: /clear [player] [item] [data] [maxCount] [dataTag]
+[20:46:33] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: /clone <x1> <y1> <z1> <x2> <y2> <z2> <x> <y> <z> [maskMode] [cloneMode]
+[20:46:33] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Tip: Use the <tab> key while typing a command to auto-complete the command or its arguments
+[20:46:42] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Stopping the server
+[20:46:42] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Stopping server
+[20:46:42] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving players
+[20:46:42] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving worlds
+[20:46:42] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'world'/overworld
+[20:46:42] [Server thread/INFO] [FML]: Unloading dimension 0
+[20:46:42] [Server Shutdown Thread/INFO] [net.minecraft.server.MinecraftServer]: Stopping server
+[20:46:42] [Server Shutdown Thread/INFO] [net.minecraft.server.MinecraftServer]: Saving players
+[20:46:42] [Server Shutdown Thread/INFO] [net.minecraft.server.MinecraftServer]: Saving worlds
